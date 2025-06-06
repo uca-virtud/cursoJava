@@ -12,9 +12,8 @@ Descarga las [diapositivas](./slides/1-Instalacion-del-entorno-de-desarrollo.pdf
 ## 2. Construcción de proyectos con Maven
 Descarga las [diapositivas](./slides/2-Construccion-de-proyectos-con-Maven.pdf).
 ## 3. Java moderno
-Descarga las [diapositivas](./slides/3-Java-moderno.pdf) y acceda al proyecto de [ejemplo](./code/javamoderno/README.MD).
+Descarga las [diapositivas](./slides/3-Java-moderno.pdf) y acceda al proyecto de [ejemplo](./code/javamoderno/README.md).
 ## 4. Introducción a Spring Framework
-Descarga las [diapositivas](./slides/4-Introduccion-a-Spring-Framework.pdf) y acceda al proyecto de [ejemplo](.
-/code/spring-intro/README.MD).
+Descarga las [diapositivas](./slides/4-Introduccion-a-Spring-Framework.pdf) y acceda al proyecto de [ejemplo](./code/springintro/README.md).
 
 
