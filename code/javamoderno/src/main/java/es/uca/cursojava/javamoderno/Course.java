@@ -7,6 +7,7 @@ public class Course {
     private String title;
     private int credits;
     private String department;
+    private String description;
 
     public Course(String courseCode, String title, int credits, String department) {
         this.courseCode = courseCode;
@@ -65,5 +66,13 @@ public class Course {
     @Override
     public int hashCode() {
         return Objects.hash(courseCode);
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

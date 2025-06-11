@@ -147,7 +147,7 @@ public class SchoolManagement {
      * Verificar si los estudiantes han aprobado (nota ≥ 5.0).
      */
     public boolean allStudentsPassed() {
-        Predicate<Enrollment> isPassed = e -> e.getGrade().compareTo(BigDecimal.valueOf(5.0)) > 0;
+        Predicate<Enrollment> isPassed = enrol -> enrol.getGrade().compareTo(BigDecimal.valueOf(5.0)) > 0;
         return enrollments.stream().allMatch(isPassed);
     }
 
@@ -160,7 +160,7 @@ public class SchoolManagement {
 
         return enrollments.stream()
                 .filter(hasFailedPredicate)
-                .map(enrollmentToStudentFunction)
+                .map(e -> e.getStudent())
                 .distinct()
                 .collect(Collectors.toList());
     }

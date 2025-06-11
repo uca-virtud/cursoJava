@@ -31,6 +31,7 @@ public class Main {
         // 2. Listado de estudiantes ordenados por año de nacimiento
         System.out.println("=== Estudiantes ordenados por año de nacimiento ===");
         List<Student> sortedByGrade = app.getStudentsSortedByYearOfBirthAsc();
+
         sortedByGrade.forEach(System.out::println);
         System.out.println();
 
@@ -69,11 +70,25 @@ public class Main {
 
         // Usando el metodo tradicional,
         // falla debido a  NullPointerException
-        // SchoolManagement.EnrollmentDTO dto = app.getEnrollmentDTOByStudentIdAndCourseCodeV1("0a", "INF-101");
-        // System.out.println("Matrícula encontrada: " + dto.toString().toUpperCase());
+        SchoolManagement.EnrollmentDTO dto = app.getEnrollmentDTOByStudentIdAndCourseCodeV1("0rrrr", "INF-101");
+
+        System.out.println("Matrícula encontrada: " + dto.studentFullName().toUpperCase());
 
         // Usando Optional para evitar NullPointerException
-        Optional<SchoolManagement.EnrollmentDTO> optionalEnrollmentDTO = app.getEnrollmentDTOByStudentIdAndCourseCode("0", "INF-101");
+        Optional<SchoolManagement.EnrollmentDTO> optionalEnrollmentDTO = app.getEnrollmentDTOByStudentIdAndCourseCode("0qwwerwe", "INF-101");
+
+        optionalEnrollmentDTO.get().courseTitle()
+
+
+        if(optionalEnrollmentDTO.ifPresent()) {
+            SchoolManagement.EnrollmentDTO enrollment = optionalEnrollmentDTO.get();
+            System.out.println("Matrícula encontrada: " + enrollment.studentFullName().toUpperCase());
+        } else {
+            System.out.println("No se encontró matrícula");
+        }
+
+
+
         optionalEnrollmentDTO.ifPresentOrElse(
                 enrollment -> System.out.println("Matrícula encontrada: " + enrollment.toString().toUpperCase()),
                 () -> System.out.println("No se encontró matrícula")
