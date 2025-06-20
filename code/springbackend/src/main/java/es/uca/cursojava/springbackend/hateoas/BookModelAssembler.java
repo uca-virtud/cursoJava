@@ -21,6 +21,8 @@ public class BookModelAssembler implements RepresentationModelAssembler<Book, En
         model.add(self.withSelfRel());
         model.add(linkTo(methodOn(AuthorController.class).getById(book.getAuthorId())).withRel("author").withType("GET"));
         model.add(linkTo(methodOn(BookController.class).create(null)).withRel("create").withType("POST"));
+
+        // if usuario tiene permisos para actualiza...
         model.add(linkTo(methodOn(BookController.class).update(book.getId(), null)).withRel("update").withType("PUT"));
         return model;
     }

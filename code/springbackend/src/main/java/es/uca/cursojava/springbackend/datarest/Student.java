@@ -1,6 +1,7 @@
 package es.uca.cursojava.springbackend.datarest;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -8,6 +9,7 @@ import jakarta.persistence.Table;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -21,6 +23,10 @@ public class Student {
     private String firstName;
     private String lastName;
     private String email;
+    private LocalDate dateOfBirth;
+    // ignorar en json
+    @JsonIgnore
+    private String datoMegaSensible;
 
     public Student() {
     }
@@ -58,6 +64,22 @@ public class Student {
 
     public UUID getId() {
         return id;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getDatoMegaSensible() {
+        return datoMegaSensible;
+    }
+
+    public void setDatoMegaSensible(String datoMegaSensible) {
+        this.datoMegaSensible = datoMegaSensible;
     }
 }
 

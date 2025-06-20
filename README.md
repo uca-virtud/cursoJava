@@ -26,12 +26,15 @@ de [ejemplo](./code/javamoderno/README.MD).
 
 ## 4. Introducción a Spring Framework
 
-Descarga las [diapositivas](./slides/4-Introduccion-a-Spring-Framework.pdf) y acceda al proyecto de [ejemplo](.
-/code/spring-intro/README.MD).
+Descarga las [diapositivas](./slides/4-Introduccion-a-Spring-Framework.pdf) y acceda al proyecto
+de [ejemplo](./code/spring-intro/README.MD).
 
 ## 5. Desarrollo de backends con Spring Boot
 
 Descarga las [diapositivas](./slides/5-Desarrollo-de-backends-con-Spring.pdf) y acceda al proyecto
 de [ejemplo](./code/springbackend/README.MD).
 
+## 6. Aspectos no funcionales con Spring Boot
 
+Descarga las [diapositivas](./slides/6-Spring-aspectos-no-funcionales.pdf) y acceda al proyecto
+de [ejemplo](./code/springavanzado/README.MD).

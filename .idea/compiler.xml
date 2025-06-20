@@ -7,13 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="springintro" />
-        <module name="springbackend" />
+        <module name="springavanzado" />
         <module name="javamoderno" />
+        <module name="springbackend" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springavanzado (2)" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springavanzado" options="-parameters" />
+      <module name="springavanzado (2)" options="-parameters" />
       <module name="springbackend" options="-parameters" />
       <module name="springintro" options="-parameters" />
     </option>
