@@ -40,6 +40,7 @@ public class BancoService {
     }
 
 
+    @CacheEvict(value = "bancosCache", allEntries = true)
     public void fetchAll() {
         logger.info("Descargando datos de bancos desde la URL: {}", url);
 
@@ -47,17 +48,18 @@ public class BancoService {
 
         try {
             restTemplate.getForObject(url, BankAPIResponse.class);
+
+            BankAPIResponse response = restTemplate.getForObject(url, BankAPIResponse.class);
+            logger.info("Se han recibido {} bancos. Sincronizando base de datos...", response.getBanks().size());
+            syncBancos(response.getBanks());
+
         } catch (Exception e) {
             logger.error("Error al descargar datos de bancos desde la API: {}", e.getMessage());
             return;
         }
-
-        BankAPIResponse response = restTemplate.getForObject(url, BankAPIResponse.class);
-        logger.info("Se han recibido {} bancos. Sincronizando base de datos...", response.getBanks().size());
-        syncBancos(response.getBanks());
+        
     }
 
-    @CacheEvict(value = "bancosCache", allEntries = true)
     private void syncBancos(List<Bank> banks) {
         for (Bank bank : banks) {
 
